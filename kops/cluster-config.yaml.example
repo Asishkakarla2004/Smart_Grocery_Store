@@ -1,0 +1,13 @@
+apiVersion: kops.k8s.io/v1alpha2
+kind: Cluster
+metadata:
+  name: grocery.example.com
+spec:
+  cloudProvider: aws
+  kubernetesVersion: 1.30.0
+  networking:
+    calico: {}
+  topology:
+    masters: private
+    nodes: private
+  # Adapt instance groups, zones, IAM and state store to your environment.

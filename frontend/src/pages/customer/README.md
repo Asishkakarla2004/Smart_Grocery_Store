@@ -1,0 +1,1 @@
+Customer dashboard screens (Home, Order, Contact, Packaging Status) are currently rendered by CustomerView in App.jsx.

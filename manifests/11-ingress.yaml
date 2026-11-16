@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grocery-ingress
+  namespace: smart-grocery
+  annotations: {nginx.ingress.kubernetes.io/proxy-body-size: "10m"}
+spec:
+  ingressClassName: nginx
+  tls: [{hosts: [grocery.example.com], secretName: grocery-tls}]
+  rules:
+  - host: grocery.example.com
+    http:
+      paths:
+      - {path: /api, pathType: Prefix, backend: {service: {name: backend, port: {number: 8080}}}}
+      - {path: /, pathType: Prefix, backend: {service: {name: frontend, port: {number: 80}}}}

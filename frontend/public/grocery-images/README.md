@@ -1,0 +1,1 @@
+Add licensed grocery product photos here.

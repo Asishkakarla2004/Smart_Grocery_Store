@@ -1,0 +1,1 @@
+package com.smartgrocery.repository; import com.smartgrocery.entity.Inventory; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface InventoryRepository extends JpaRepository<Inventory,Long>{Optional<Inventory> findByProductId(Long id); List<Inventory> findByPhysicalStockLessThanEqual(java.math.BigDecimal n);}

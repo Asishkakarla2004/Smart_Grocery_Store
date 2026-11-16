@@ -1,0 +1,1 @@
+Reserved for shared authentication/cart context when API-backed persistence is enabled.

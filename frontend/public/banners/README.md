@@ -1,0 +1,1 @@
+Add promotional banner assets here.

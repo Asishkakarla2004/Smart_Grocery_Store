@@ -1,0 +1,1 @@
+Reusable React components are currently composed in App.jsx. Extract shared components here as the UI grows.

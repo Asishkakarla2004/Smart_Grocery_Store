@@ -1,0 +1,1 @@
+Global styles currently live in ../styles.css.

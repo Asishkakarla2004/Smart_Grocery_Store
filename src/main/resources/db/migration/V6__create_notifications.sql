@@ -1,0 +1,1 @@
+CREATE TABLE notifications(id BIGSERIAL PRIMARY KEY,user_id BIGINT REFERENCES users(id),title VARCHAR(180) NOT NULL,message TEXT,read BOOLEAN DEFAULT false,created_at TIMESTAMPTZ DEFAULT now());

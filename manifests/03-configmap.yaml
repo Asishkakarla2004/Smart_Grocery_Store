@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: grocery-config, namespace: smart-grocery}
+data:
+  SPRING_PROFILES_ACTIVE: prod
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/smart_grocery_db
+  SERVER_PORT: "8080"
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DB_NAME: smart_grocery_db
+  FRONTEND_API_BASE: /api/v1
+  UPLOAD_STORAGE: /var/lib/smart-grocery/uploads
+  LOGGING_LEVEL: INFO

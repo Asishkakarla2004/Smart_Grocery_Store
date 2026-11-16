@@ -1,0 +1,4 @@
+# Kubernetes deployment
+Apply namespace and resources with `kubectl apply -f manifests/`. The 12 manifest files create namespace/quota/config/secret, EBS storage class, PostgreSQL StatefulSet, three Services, backend/frontend Deployments, HPAs, PDBs, Ingress and default-deny plus explicit NetworkPolicies. Ensure ingress-nginx, metrics-server, Calico (or another NetworkPolicy-enforcing CNI), and AWS EBS CSI are installed. Replace image names, Secret values, hostname and TLS secret before production. Ingress controller namespace selector assumes `ingress-nginx`; adjust to your controller labels. The frontend-to-backend rule is only needed if browser requests route through the frontend pod; the Nginx proxy currently proxies `/api` from frontend to backend.
+
+Commands: `./k8s/deploy.sh`, `./k8s/verify.sh`, `./k8s/rollback.sh`. Inspect with `kubectl get pods,svc,pvc -n smart-grocery` and `kubectl logs deploy/backend -n smart-grocery`.
